@@ -72,6 +72,14 @@ print(random_start())
 def check_empty_space( board, position ):
     return board[position] == ' '
 
+# check if the board is full or not
+
+def full_board_check( board ):
+    for i in range(1,10):
+        if check_empty_space( board, i):
+            return False 
+    return True
+
 
 #while True:
     # Set the game up here
