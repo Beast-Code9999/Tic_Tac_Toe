@@ -31,6 +31,15 @@ player1_marker, player2_marker = player_input()
 print('Player 1: ', player1_marker)
 print('Player 2: ', player2_marker)
 
+# place marker on board, aka a list
+
+def place_marker( board, marker, position ):
+    board[position] = marker
+
+place_marker( test_board, "$", 1 )
+display_board( test_board )
+
+
 
 #while True:
     # Set the game up here
