@@ -39,7 +39,17 @@ def place_marker( board, marker, position ):
 place_marker( test_board, "$", 1 )
 display_board( test_board )
 
+# check for win 
 
+def win_check( board, mark ):
+    return ((board[7] == board[8] == board[9] == mark) or # top horizontal
+           (board[4] == board[5] == board[6] == mark) or # middle horizontal
+           (board[1] == board[2] == board[3] == mark) or # bottom horizontal
+           (board[9] == board[6] == board[3] == mark) or # right vertical
+           (board[8] == board[5] == board[2] == mark) or # middle vertical
+           (board[7] == board[4] == board[1] == mark) or # left vertical
+           (board[7] == board[5] == board[3] == mark) or # backslash diagonal
+           (board[1] == board[5] == board[9] == mark))   # forwardslash diagonal
 
 #while True:
     # Set the game up here
