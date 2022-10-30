@@ -67,6 +67,12 @@ def random_start():
 
 print(random_start())
 
+# check if the space on the board is empty
+
+def check_empty_space( board, position ):
+    return board[position] == ' '
+
+
 #while True:
     # Set the game up here
     #pass
