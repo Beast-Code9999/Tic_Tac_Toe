@@ -1,3 +1,5 @@
+import random 
+
 # welcome
 print('Welcome to Tic Tac Toe!')
 
@@ -54,7 +56,16 @@ def win_check( board, mark ):
 win_status = win_check( test_board, player1_marker )
 print(win_status)
 
+# randomize which player goes first
 
+def random_start():  
+    flip = random.randint(0,1)   
+    if flip == 0:
+        return 'player 1'
+    else:
+        return 'player 2'
+
+print(random_start())
 
 #while True:
     # Set the game up here
