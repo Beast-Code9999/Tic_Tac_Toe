@@ -80,6 +80,7 @@ def full_board_check( board ):
             return False 
     return True
 
+print("is the board full?: ", full_board_check( test_board ))
 
 #while True:
     # Set the game up here
