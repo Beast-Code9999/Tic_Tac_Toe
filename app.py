@@ -51,6 +51,11 @@ def win_check( board, mark ):
            (board[7] == board[5] == board[3] == mark) or # backslash diagonal
            (board[1] == board[5] == board[9] == mark))   # forwardslash diagonal
 
+win_status = win_check( test_board, player1_marker )
+print(win_status)
+
+
+
 #while True:
     # Set the game up here
     #pass
