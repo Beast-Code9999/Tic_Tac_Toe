@@ -1,8 +1,4 @@
 # welcome
-
-from cgi import test
-
-
 print('Welcome to Tic Tac Toe!')
 
 # print out a board
@@ -16,6 +12,24 @@ def display_board( board ):
 
 display_board( test_board )
 
+# assign player marker 
+
+def player_input():
+    choice = ""
+    while choice not in ['X', 'O', 'x', 'o']:
+        choice = input("Please choose a sign (X or O): ").upper()
+    player1 = choice
+    if player1 == 'X':
+        player2 = 'O'
+    else:
+        player2 = 'X'
+    
+    return (player1, player2)
+
+player1_marker, player2_marker = player_input()
+
+print('Player 1: ', player1_marker)
+print('Player 2: ', player2_marker)
 
 
 #while True:
