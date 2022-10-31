@@ -82,6 +82,19 @@ def full_board_check( board ):
 
 print("is the board full?: ", full_board_check( test_board ))
 
+# player's choice of position
+
+def player_choice( board ):
+
+    position = 0
+    
+    while position not in [1,2,3,4,5,6,7,8,9] or not check_empty_space( board, position ):
+        
+        position = int(input("Choose a position (1-9): "))
+        
+    return position
+        
+
 #while True:
     # Set the game up here
     #pass
