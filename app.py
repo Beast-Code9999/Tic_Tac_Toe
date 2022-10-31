@@ -94,6 +94,17 @@ def player_choice( board ):
         
     return position
         
+# ask player if they want to play again
+
+def replay():
+    
+    choice = ''
+    
+    while choice not in ['yes', 'no']:
+        
+        choice = input("Do you wish to play again? (Yes or No): ").lower()
+        
+    return choice == 'yes'
 
 #while True:
     # Set the game up here
