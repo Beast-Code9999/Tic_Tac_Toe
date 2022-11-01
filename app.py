@@ -106,6 +106,10 @@ def replay():
         
     return choice == 'yes'
 
+play = replay()
+
+while play: 
+    pass
 #while True:
     # Set the game up here
     #pass
