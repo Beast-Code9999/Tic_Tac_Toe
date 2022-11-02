@@ -108,6 +108,8 @@ def replay():
 
 play = replay()
 
+print("Welcome to Tic Tac Toe")
+
 while play: 
     pass
 #while True:
@@ -117,7 +119,8 @@ while play:
     #while game_on:
         #Player 1 Turn
         
-        
+    if not play:
+        break
         # Player2's turn.
             
             #pass
