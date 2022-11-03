@@ -107,6 +107,12 @@ while play:
     the_board = [' '] * 10
 
     player1_marker, player2_marker = player_input()
+
+    turn = random_start()
+
+    print( turn + ' will go first')
+
+    play_game = input("Do you wish to play?")
     pass
 
         
