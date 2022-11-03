@@ -12,8 +12,6 @@ def display_board( board ):
     print(board[4] + '|' + board[5] + '|' + board[6])
     print(board[1] + '|' + board[2] + '|' + board[3])
 
-display_board( test_board )
-
 # assign player marker 
 
 def player_input():
@@ -32,9 +30,6 @@ def player_input():
 
 def place_marker( board, marker, position ):
     board[position] = marker
-
-place_marker( test_board, "$", 1 )
-display_board( test_board )
 
 # check for win 
 
@@ -99,7 +94,7 @@ play = replay()
 
 print('Welcome to Tic Tac Toe!')
 
-while True:
+while play:
     # Reset the board
     theBoard = [' '] * 10
     player1_marker, player2_marker = player_input()
