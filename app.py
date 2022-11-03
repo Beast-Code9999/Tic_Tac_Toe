@@ -71,7 +71,7 @@ def full_board_check( board ):
             return False 
     return True
 
-print("is the board full?: ", full_board_check( test_board ))
+
 
 # player's choice of position
 
@@ -122,6 +122,19 @@ while play:
 
         if turn == 'player 1':
             pass
+            # show board
+            display_board(the_board)
+            # choose a position
+            position = player_choice( the_board )
+            # place a marker
+            place_marker( the_board, player1_marker, position )
+            # check if player1 won or a tie
+            if win_check( the_board, player1_marker ):
+                display_board( the_board )
+                print( "player 1 has won ")
+                game_on = False
+
+            # if no tie or win, then next player turn
 
         else:
             pass
