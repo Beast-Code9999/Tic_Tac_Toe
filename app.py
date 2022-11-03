@@ -118,7 +118,7 @@ while play:
 
             if win_check(theBoard, player1_marker):
                 display_board(theBoard)
-                print('Congratulations! You have won the game!')
+                print('Congratulations player 1! You have won the game!')
                 game_on = False
             else:
                 if full_board_check(theBoard):
@@ -126,6 +126,7 @@ while play:
                     print('The game is a draw!')
                     break
                 else:
+                    print("player 2 turn")
                     turn = 'Player 2'
 
         else:
@@ -137,7 +138,7 @@ while play:
 
             if win_check(theBoard, player2_marker):
                 display_board(theBoard)
-                print('Player 2 has won!')
+                print('Congratulations player 2! You have won the game!')
                 game_on = False
             else:
                 if full_board_check(theBoard):
@@ -145,6 +146,7 @@ while play:
                     print('The game is a draw!')
                     break
                 else:
+                    print("player 1 turn")
                     turn = 'Player 1'
 
     if not replay():
