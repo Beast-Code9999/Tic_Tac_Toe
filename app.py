@@ -57,7 +57,6 @@ def random_start():
     else:
         return 'player 2'
 
-print(random_start())
 
 # check if the space on the board is empty
 
@@ -103,16 +102,30 @@ play = replay()
 print("Welcome to Tic Tac Toe")
 
 while play: 
-
+    # create an empty board to display later
     the_board = [' '] * 10
-
+    # ask the user to choose a player sign and assign them respetively
     player1_marker, player2_marker = player_input()
 
-    turn = random_start()
+    turn = random_start() # give a random start to either sign
 
-    print( turn + ' will go first')
+    print( turn + ' will go first') 
 
-    play_game = input("Do you wish to play?")
+    play_game = input("Are you ready to play? (y or n)") # to check if player is ready to plat
+    # addign whether game_on is True or Not based on play_game
+    if play_game in ['y', 'Y', 'Yes', 'YES']: 
+        game_on = True
+    else:
+        game_on = False
+
+    while game_on:
+
+        if turn == 'player 1':
+            pass
+
+        else:
+            pass
+
     pass
 
         
