@@ -133,7 +133,7 @@ while play:
                 print( "player 1 has won ")
                 game_on = False
             else: 
-                if full_board_check:
+                if full_board_check( the_board ):
                     display_board( the_board )
                     print("it is a tie")
                     game_on = False
@@ -154,17 +154,12 @@ while play:
                 print( "player 2 has won ")
                 game_on = False
             else: 
-                if full_board_check:
+                if full_board_check( the_board ):
                     display_board( the_board )
                     print("it is a tie")
                     game_on = False
                 else: 
             # if no tie or win, then next player turn
                     turn = 'player 1'
-
-
-    pass
-
-        
     if not play:
         break
