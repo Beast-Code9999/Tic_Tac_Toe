@@ -60,28 +60,26 @@ def random_start():
 
 # check if the space on the board is empty
 
-def check_empty_space( board, position ):
+def space_check(board, position):
+    
     return board[position] == ' '
 
 # check if the board is full or not
 
-def full_board_check( board ):
+def full_board_check(board):
     for i in range(1,10):
-        if check_empty_space( board, i):
-            return False 
+        if space_check(board, i):
+            return False
     return True
-
 
 
 # player's choice of position
 
-def player_choice( board ):
-
+def player_choice(board):
     position = 0
     
-    while position not in [1,2,3,4,5,6,7,8,9] or not check_empty_space( board, position ):
-        
-        position = int(input("Choose a position (1-9): "))
+    while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board, position):
+        position = int(input('Choose your next position: (1-9) '))
         
     return position
         
@@ -99,67 +97,60 @@ def replay():
 
 play = replay()
 
-print("Welcome to Tic Tac Toe")
+print('Welcome to Tic Tac Toe!')
 
-while play: 
-    # create an empty board to display later
-    the_board = [' '] * 10
-    # ask the user to choose a player sign and assign them respetively
+while True:
+    # Reset the board
+    theBoard = [' '] * 10
     player1_marker, player2_marker = player_input()
-
-    turn = random_start() # give a random start to either sign
-
-    print( turn + ' will go first') 
-
-    play_game = input("Are you ready to play? (y or n)") # to check if player is ready to plat
-    # addign whether game_on is True or Not based on play_game
-    if play_game in ['y', 'Y', 'Yes', 'YES']: 
+    turn = random_start()
+    print(turn + ' will go first.')
+    
+    play_game = input('Are you ready to play? Enter Yes or No: ')
+    
+    if play_game.lower()[0] == 'y':
         game_on = True
     else:
         game_on = False
 
     while game_on:
+        if turn == 'Player 1':
+            # Player1's turn.
+            
+            display_board(theBoard)
+            position = player_choice(theBoard)
+            place_marker(theBoard, player1_marker, position)
 
-        if turn == 'player 1':
-            # show board
-            display_board(the_board)
-            # choose a position
-            position = player_choice( the_board )
-            # place a marker
-            place_marker( the_board, player1_marker, position )
-            # check if player1 won or a tie
-            if win_check( the_board, player1_marker ):
-                display_board( the_board )
-                print( "player 1 has won ")
+            if win_check(theBoard, player1_marker):
+                display_board(theBoard)
+                print('Congratulations! You have won the game!')
                 game_on = False
-            else: 
-                if full_board_check( the_board ):
-                    display_board( the_board )
-                    print("it is a tie")
-                    game_on = False
-                else: 
-            # if no tie or win, then next player turn
-                    turn = 'player 2'
+            else:
+                if full_board_check(theBoard):
+                    display_board(theBoard)
+                    print('The game is a draw!')
+                    break
+                else:
+                    turn = 'Player 2'
 
         else:
-            # show board
-            display_board(the_board)
-            # choose a position
-            position = player_choice( the_board )
-            # place a marker
-            place_marker( the_board, player2_marker, position )
-            # check if player1 won or a tie
-            if win_check( the_board, player2_marker ):
-                display_board( the_board )
-                print( "player 2 has won ")
+            # Player2's turn.
+            
+            display_board(theBoard)
+            position = player_choice(theBoard)
+            place_marker(theBoard, player2_marker, position)
+
+            if win_check(theBoard, player2_marker):
+                display_board(theBoard)
+                print('Player 2 has won!')
                 game_on = False
-            else: 
-                if full_board_check( the_board ):
-                    display_board( the_board )
-                    print("it is a tie")
-                    game_on = False
-                else: 
-            # if no tie or win, then next player turn
-                    turn = 'player 1'
-    if not play:
+            else:
+                if full_board_check(theBoard):
+                    display_board(theBoard)
+                    print('The game is a draw!')
+                    break
+                else:
+                    turn = 'Player 1'
+
+    if not replay():
         break
