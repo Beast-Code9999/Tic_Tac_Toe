@@ -28,11 +28,6 @@ def player_input():
     
     return (player1, player2)
 
-player1_marker, player2_marker = player_input()
-
-print('Player 1: ', player1_marker)
-print('Player 2: ', player2_marker)
-
 # place marker on board, aka a list
 
 def place_marker( board, marker, position ):
@@ -52,9 +47,6 @@ def win_check( board, mark ):
            (board[7] == board[4] == board[1] == mark) or # left vertical
            (board[7] == board[5] == board[3] == mark) or # backslash diagonal
            (board[1] == board[5] == board[9] == mark))   # forwardslash diagonal
-
-win_status = win_check( test_board, player1_marker )
-print(win_status)
 
 # randomize which player goes first
 
@@ -111,19 +103,12 @@ play = replay()
 print("Welcome to Tic Tac Toe")
 
 while play: 
-    pass
-#while True:
-    # Set the game up here
-    #pass
 
-    #while game_on:
-        #Player 1 Turn
+    the_board = [' '] * 10
+
+    player1_marker, player2_marker = player_input()
+    pass
+
         
     if not play:
         break
-        # Player2's turn.
-            
-            #pass
-
-    #if not replay():
-        #break
